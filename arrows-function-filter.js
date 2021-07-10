@@ -41,9 +41,44 @@
             people => people.workingIn === workingIn || people.workingIn === workingIn2 // return implicito (no dispone de llave)
         );
 
+    // function arrow function (two arrows, el propio método en si y la parte de dentro del filter).
+    // No hace falta ningún return, al no disponer de llaves viene implicito el return
+    // tanto para el arrow empleado dentro del filter como el arror de la propia creacion de la función.
+    // 2 return (2 implicito).
+    // expecificado 2 valores por defecto en la function arrows para los parametros workingIn y workingIn2.
+    peopleByWorkingInArrowV4 = (workingIn = 'OFICINA', workingIn2 = 'DESPACHO') => // return implicito (no dispone de llave)
+        peoples.filter(
+            people => people.workingIn === workingIn || people.workingIn === workingIn2 // return implicito (no dispone de llave)
+        );
+
+
+    // function arrow function (two arrows, el propio método en si y la parte de dentro del filter).
+    // No hace falta ningún return, al no disponer de llaves viene implicito el return
+    // tanto para el arrow empleado dentro del filter como el arror de la propia creacion de la función.
+    // 2 return (2 implicito)
+    peopleByWorkingInArrowV3 = (workingIn, workingIn2) => // return implicito (no dispone de llave)
+        peoples.filter(
+            people => people.workingIn === workingIn || people.workingIn === workingIn2 // return implicito (no dispone de llave)
+        );
+
+    // function arrow function (two arrows, el propio método en si y la parte de dentro del filter).
+    // No hace falta ningún return, al no disponer de llaves viene implicito el return
+    // tanto para el arrow empleado dentro del filter como el arror de la propia creacion de la función.
+    // 2 return (2 implicito).
+    // expecificando 2 valores por defecto en la function arrows para los parametros workingIn y workingIn2.
+    peopleByWorkingInArrowV5 = ({ workingIn = 'CASA', workingIn2 = 'CASA' }) => // return implicito (no dispone de llave)
+        peoples.filter(
+            people => people.workingIn === workingIn || people.workingIn === workingIn2 // return implicito (no dispone de llave)
+        );
+
+
     // EMPLEADOS QUE TRABAJEN EN OFICINA O DESPACHO
     // Todos las funciones devuelven lo mismo
     console.log('Tradicional: ', peopleByWorkingIn('OFICINA', 'DESPACHO'));
     console.log('Arrow      - 2 return (0 implicito): ', peopleByWorkingInArrow('OFICINA', 'DESPACHO'));
     console.log('ArrowV2    - 2 return (1 implicito): ', peopleByWorkingInArrowV2('OFICINA', 'DESPACHO'));
     console.log('ArrowV3    - 2 return (2 implicito): ', peopleByWorkingInArrowV3('OFICINA', 'DESPACHO'));
+    console.log('ArrowV4    - 2 return (2 implicito): ', peopleByWorkingInArrowV4());
+    console.log('ArrowV5    - 2 return (2 implicito): ', peopleByWorkingInArrowV5({ workingIn: 'OFICINA', workingIn2: 'DESPACHO' }));
+    // let filterObj = { workingIn: 'OFICINA', workingIn2: 'DESPACHO' };
+    // console.log('ArrowV5    - 2 return (2 implicito): ', peopleByWorkingInArrowV5(obj));
